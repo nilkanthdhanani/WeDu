@@ -1,10 +1,147 @@
 @import "../../assets/styles/main.scss";
 
 .header {
-    padding: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    padding: 10px 0 0 0;
+    transition: all 0.3s ease-in-out;
 
-    h1 {
-        font-size: 60px;
-        font-weight: 900;
+    &.scrolled {
+        padding: 20px 0 0 0;
+        transition: all 0.3s ease-in-out;
+
+        .headerDiv {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    .headerDiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: var(--color-white);
+        transition: all 0.3s ease-in-out;
+
+        .logo {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            align-items: center;
+            gap: 10px;
+
+            svg {
+                width: 42px;
+            }
+
+            .logoText {
+                span {
+                    @include font22Bold;
+                    font-family: var(--font-family-space);
+                    color: var(--font-black);
+                    user-select: none;
+                }
+            }
+        }
+
+        .headerList {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            @include breakpoint("lg-max") {
+                padding-right: 60px;
+            }
+
+            @include breakpoint("sm-max") {
+                display: none;
+            }
+
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    span {
+                        @include font16;
+                        font-family: var(--font-family-proxima);
+                        color: var(--font-black);
+                    }
+                }
+
+                @include breakpoint("lg-max") {
+                    display: none;
+                }
+            }
+        }
+
+        .menuIcon {
+            position: fixed;
+            right: 40px;
+            z-index: 99;
+            padding: 10px;
+            display: none;
+
+            @include breakpoint("lg-max") {
+                display: block;
+            }
+
+            @include breakpoint("md-max") {
+                right: 30px;
+            }
+
+            label {
+                display: flex;
+                flex-direction: column;
+                width: 35px;
+                cursor: pointer;
+
+                span {
+                    background: var(--color-black);
+                    border-radius: 90px;
+                    border-bottom: 3px solid var(--color-black);
+                    margin: 4px 0;
+                    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+                    &:nth-of-type(1) {
+                        width: 100%;
+                    }
+
+                    &:nth-of-type(2) {
+                        width: 100%;
+                    }
+
+                    &:nth-of-type(3) {
+                        width: 100%;
+                    }
+                }
+
+                input {
+                    display: none;
+
+                    &:checked ~ span:nth-of-type(1) {
+                        width: 100%;
+                        transform-origin: bottom;
+                        transform: rotatez(-45deg) translateX(-5px) translateY(10px);
+                    }
+
+                    &:checked ~ span:nth-of-type(2) {
+                        opacity: 0;
+                    }
+
+                    &:checked ~ span:nth-of-type(3) {
+                        transform-origin: top;
+                        transform: rotatez(45deg) translateX(-5px) translateY(-10px);
+                    }
+                }
+            }
+        }
     }
 }
