@@ -8,7 +8,6 @@ export default function Header() {
         <div className={styles.headerDiv}>
           <div className={styles.headerDivLogo}>
             <LogoIco />
-            
           </div>
         </div>
       </div>
