@@ -4,11 +4,10 @@
     position: sticky;
     top: 0;
     z-index: 9;
-    padding: 10px 0 0 0;
+    padding: 20px 0 0 0;
     transition: all 0.3s ease-in-out;
 
     &.scrolled {
-        padding: 20px 0 0 0;
         transition: all 0.3s ease-in-out;
 
         .headerDiv {
@@ -73,6 +72,21 @@
                         @include font16;
                         font-family: var(--font-family-proxima);
                         color: var(--font-black);
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    svg {
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    &:hover {
+                        span {
+                            color: var(--font-yellow);
+                        }
+
+                        svg {
+                            fill: var(--font-yellow);
+                        }
                     }
                 }
 
@@ -81,66 +95,67 @@
                 }
             }
         }
+    }
+}
 
-        .menuIcon {
-            position: fixed;
-            right: 40px;
-            z-index: 99;
-            padding: 10px;
+.menuIcon {
+    position: fixed;
+    top: 35px;
+    right: 40px;
+    z-index: 999;
+    padding: 10px;
+    display: none;
+
+    @include breakpoint("lg-max") {
+        display: block;
+    }
+
+    @include breakpoint("md-max") {
+        right: 30px;
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        width: 35px;
+        cursor: pointer;
+
+        span {
+            background: var(--color-black);
+            border-radius: 90px;
+            border-bottom: 3px solid var(--color-black);
+            margin: 4px 0;
+            transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+            &:nth-of-type(1) {
+                width: 100%;
+            }
+
+            &:nth-of-type(2) {
+                width: 100%;
+            }
+
+            &:nth-of-type(3) {
+                width: 100%;
+            }
+        }
+
+        input {
             display: none;
 
-            @include breakpoint("lg-max") {
-                display: block;
+            &:checked ~ span:nth-of-type(1) {
+                width: 100%;
+                transform-origin: bottom;
+                transform: rotatez(-45deg) translateX(-5px) translateY(10px);
             }
 
-            @include breakpoint("md-max") {
-                right: 30px;
+            &:checked ~ span:nth-of-type(2) {
+                opacity: 0;
             }
 
-            label {
-                display: flex;
-                flex-direction: column;
-                width: 35px;
-                cursor: pointer;
-
-                span {
-                    background: var(--color-black);
-                    border-radius: 90px;
-                    border-bottom: 3px solid var(--color-black);
-                    margin: 4px 0;
-                    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-
-                    &:nth-of-type(1) {
-                        width: 100%;
-                    }
-
-                    &:nth-of-type(2) {
-                        width: 100%;
-                    }
-
-                    &:nth-of-type(3) {
-                        width: 100%;
-                    }
-                }
-
-                input {
-                    display: none;
-
-                    &:checked ~ span:nth-of-type(1) {
-                        width: 100%;
-                        transform-origin: bottom;
-                        transform: rotatez(-45deg) translateX(-5px) translateY(10px);
-                    }
-
-                    &:checked ~ span:nth-of-type(2) {
-                        opacity: 0;
-                    }
-
-                    &:checked ~ span:nth-of-type(3) {
-                        transform-origin: top;
-                        transform: rotatez(45deg) translateX(-5px) translateY(-10px);
-                    }
-                }
+            &:checked ~ span:nth-of-type(3) {
+                transform-origin: top;
+                transform: rotatez(45deg) translateX(-5px) translateY(-10px);
             }
         }
     }
