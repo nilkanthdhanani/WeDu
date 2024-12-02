@@ -5,8 +5,10 @@ import styles from "./header.module.scss";
 import Link from "next/link";
 import ProfileIco from "@/assets/images/svg/profile";
 import Sidebar from "../sidebar";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -16,7 +18,6 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -30,12 +31,29 @@ export default function Header() {
     }
 
     return () => {
-      document.body.classList.remove("no-scroll"); // Cleanup on unmount
+      document.body.classList.remove("no-scroll");
     };
   }, [isSidebarOpen]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
   };
 
   return (
@@ -53,11 +71,21 @@ export default function Header() {
             </Link>
             <div className={styles.headerList}>
               <nav>
-                <Link href={"/"}><span>Home</span></Link>
-                <Link href={"/"}><span>Product</span></Link>
-                <Link href={"/"}><span>Product Plans</span></Link>
-                <Link href={"/"}><span>Contact</span></Link>
-                <Link href={"/"}><ProfileIco /> <span>Log In</span></Link>
+                <Link href={"/"} className={pathname === '/' ? styles.active : ''}>
+                  <span>Home</span>
+                </Link>
+                <Link href={"/product"} className={pathname === '/product' ? styles.active : ''}>
+                  <span>Product</span>
+                </Link>
+                <Link href={"/plans"} className={pathname === '/plans' ? styles.active : ''}>
+                  <span>Product Plans</span>
+                </Link>
+                <Link href={"/contact"} className={pathname === '/contact' ? styles.active : ''}>
+                  <span>Contact</span>
+                </Link>
+                <Link href={"/login"} className={pathname === '/login' ? styles.active : ''}>
+                  <ProfileIco /> <span>Log In</span>
+                </Link>
               </nav>
               <Link href={"/"}>
                 <button type="button">Get Started</button>
@@ -68,13 +96,13 @@ export default function Header() {
       </header>
       <div className={styles.menuIcon}>
         <label>
-          <input type="checkbox" onClick={toggleSidebar} />
+          <input type="checkbox" onClick={toggleSidebar} checked={isSidebarOpen} readOnly />
           <span></span>
           <span></span>
           <span></span>
         </label>
       </div>
-      <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
+      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
     </>
   );
 }

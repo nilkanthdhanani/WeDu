@@ -8,20 +8,18 @@
     transition: all 0.3s ease-in-out;
 
     &.scrolled {
-        transition: all 0.3s ease-in-out;
-
         .headerDiv {
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            border-radius: 10px;
             transition: all 0.3s ease-in-out;
         }
     }
-
+    
     .headerDiv {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px;
+        border-radius: 10px;
         background-color: var(--color-white);
         transition: all 0.3s ease-in-out;
 
@@ -80,6 +78,16 @@
                     }
 
                     &:hover {
+                        span {
+                            color: var(--font-yellow);
+                        }
+
+                        svg {
+                            fill: var(--font-yellow);
+                        }
+                    }
+
+                    &.active {
                         span {
                             color: var(--font-yellow);
                         }

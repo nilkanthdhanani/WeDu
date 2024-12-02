@@ -3,15 +3,98 @@
 .sidebar {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 300px;
+    right: -100%;
+    width: 100%;
     height: 100%;
     background-color: var(--color-white);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    transition: all 0.3s ease;
     z-index: 99;
-}
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    transition: all 0.3s ease;
 
-.open {
-    left: 0;
+    &.open {
+        right: 0;
+    }
+
+    .logo {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+            width: 42px;
+        }
+
+        .logoText {
+            span {
+                @include font22Bold;
+                font-family: var(--font-family-space);
+                color: var(--font-black);
+                user-select: none;
+            }
+        }
+    }
+
+    .headerList {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 40px;
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 15px;
+
+                span {
+                    @include font16;
+                    font-family: var(--font-family-proxima);
+                    color: var(--font-black);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                svg {
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    span {
+                        color: var(--font-yellow);
+                    }
+
+                    svg {
+                        fill: var(--font-yellow);
+                    }
+                }
+
+                &.active {
+                    span {
+                        color: var(--font-yellow);
+                    }
+
+                    svg {
+                        fill: var(--font-yellow);
+                    }
+                }
+            }
+        }
+
+        button {
+            display: none;
+
+            @include breakpoint("sm-max") {
+                display: block;
+            }
+        }
+    }
 }
