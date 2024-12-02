@@ -13,7 +13,7 @@
             transition: all 0.3s ease-in-out;
         }
     }
-    
+
     .headerDiv {
         display: flex;
         justify-content: space-between;
@@ -67,10 +67,22 @@
                     gap: 10px;
 
                     span {
+                        position: relative;
                         @include font16;
                         font-family: var(--font-family-proxima);
                         color: var(--font-black);
                         transition: all 0.3s ease-in-out;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: -2px;
+                            left: 0;
+                            width: 100%;
+                            min-height: 0;
+                            background-color: var(--font-yellow);
+                            transition: all 0.3s ease-in-out;
+                        }
                     }
 
                     svg {
@@ -79,7 +91,9 @@
 
                     &:hover {
                         span {
-                            color: var(--font-yellow);
+                            &::after {
+                                min-height: 2px;
+                            }
                         }
 
                         svg {
@@ -89,7 +103,9 @@
 
                     &.active {
                         span {
-                            color: var(--font-yellow);
+                            &::after {
+                                min-height: 2px;
+                            }
                         }
 
                         svg {

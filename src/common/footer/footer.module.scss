@@ -1,4 +1,222 @@
 @import "../../assets/styles/main.scss";
 
-// .footer {
-// }
+.footer {
+    padding-top: 100px;
+    background-color: var(--bg-yellow);
+
+    .footerFirst {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+
+        @include breakpoint("sm-max") {
+            flex-direction: column;
+            align-items: normal;
+        }
+
+        .footerLogo {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            align-items: center;
+            gap: 10px;
+
+            svg {
+                width: 42px;
+            }
+
+            .logoText {
+                user-select: none;
+
+                span {
+                    @include font22Bold;
+                    font-family: var(--font-family-space);
+                    color: var(--font-black);
+                }
+
+                p {
+                    @include font14;
+                    font-family: var(--font-family-proxima);
+                    color: var(--font-black);
+                }
+            }
+        }
+
+        .footerSocial {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            svg {
+                fill: var(--color-black);
+            }
+        }
+    }
+
+    .footerLinks {
+        margin: 50px 0;
+        display: grid;
+        grid-template-columns: 1fr 20% 35%;
+        gap: 40px 20px;
+
+        @include breakpoint("lg-max") {
+            grid-template-columns: 1fr 35%;
+            gap: 40px;
+        }
+
+        @include breakpoint("sm-max") {
+            grid-template-columns: 1fr;
+            margin: 30px 0;
+            gap: 30px;
+        }
+
+        .footerLinkDiv,
+        .footerLinkDiv2,
+        .footerLinkDiv3 {
+            font-family: var(--font-family-proxima);
+
+            h2 {
+                @include font20Bold;
+                color: var(--font-black);
+                margin-bottom: 30px;
+
+                @include breakpoint("sm-max") {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .footerLinkDiv {
+            .footerContact {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px 20px;
+
+                @include breakpoint("sm-max") {
+                    gap: 20px;
+                }
+
+                p {
+                    @include font16;
+                    line-height: 20px;
+
+                    a,
+                    span {
+                        display: block;
+                        color: var(--font-black);
+                    }
+                }
+            }
+        }
+
+        .footerLinkDiv2 {
+            a {
+                display: block;
+                margin-bottom: 15px;
+                text-decoration-line: underline;
+                @include font16;
+                color: var(--font-black);
+            }
+        }
+
+        .footerLinkDiv3 {
+            p {
+                @include font16;
+                line-height: 20px;
+                margin-bottom: 15px;
+            }
+
+            form {
+                label {
+                    display: block;
+                    margin-bottom: 8px;
+                    @include font16;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 10px;
+                    @include font16;
+                    border-radius: 7px;
+                    border: 2px solid var(--color-black);
+                    color: var(--color-black);
+                    background-color: transparent;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                ::placeholder {
+                    color: var(--font-placeholder);
+                }
+
+                .checkboxDiv {
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                    margin: 20px 0;
+
+                    label {
+                        margin-bottom: 0;
+                        cursor: pointer;
+                    }
+
+                    .checkbox {
+                        input {
+                            position: absolute;
+                            margin: 0;
+                            width: 18px;
+                            height: 18px;
+                            cursor: pointer;
+                            opacity: 0;
+
+                            &:checked + span svg path {
+                                stroke-dashoffset: 0;
+                            }
+                        }
+
+                        input + span {
+                            display: block;
+                            border: 2px solid var(--color-black);
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: all 0.2s ease;
+
+                            &:active {
+                                transform: scale(1.05);
+                            }
+
+                            svg {
+                                pointer-events: none;
+                                padding: 10%;
+
+                                path {
+                                    fill: none;
+                                    stroke: var(--color-black);
+                                    stroke-width: 6px;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-dasharray: 100;
+                                    stroke-dashoffset: 101;
+                                    transition: all 250ms cubic-bezier(1, 0, 0.37, 0.91);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footerBottom {
+        text-align: center;
+        padding: 10px 20px;
+        background-color: var(--color-black);
+        @include font12;
+        font-family: var(--font-family-proxima);
+        color: var(--color-white);
+    }
+}
