@@ -1,5 +1,66 @@
 @import "../../../assets/styles/main.scss";
 
 .heroBanner {
-    height: 100vh;
+    padding: 200px 0 100px 0;
+
+    .bannerDiv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .bannerDivContent {
+            h1 {
+                @include font50;
+                color: var(--font-black);
+                font-family: var(--font-family-space);
+            }
+
+            p {
+                max-width: 365px;
+                margin: 40px 0;
+                @include font20;
+                color: var(--font-black);
+                font-family: var(--font-family-proxima);
+            }
+
+            .bannerDivContentGrid {
+                margin-top: 60px;
+                max-width: 450px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+
+                .gridBox {
+                    display: flex;
+                    gap: 10px;
+
+                    img {
+                        width: 32px;
+                        height: 32px;
+                    }
+
+                    span {
+                        display: block;
+                        @include font14;
+                        font-family: var(--font-family-proxima);
+                        color: var(--font-black);
+                        letter-spacing: 0.5px;
+                    }
+                }
+            }
+        }
+
+        .bannerDivImg {
+            position: relative;
+            min-height: 490px;
+
+            .bannerDivImgDiv {
+                position: absolute;
+                right: 0;
+
+                svg {
+                    width: auto;
+                }
+            }
+        }
+    }
 }

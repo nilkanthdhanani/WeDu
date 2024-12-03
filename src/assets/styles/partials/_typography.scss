@@ -17,6 +17,25 @@
     font-weight: 400;
 }
 
+@mixin font16Bold {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+}
+
+@mixin commonPera {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    font-family: var(--font-family-proxima);
+}
+
+@mixin font20 {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
 @mixin font20Bold {
     font-size: 20px;
     line-height: 22px;
@@ -29,8 +48,39 @@
     font-weight: 700;
 }
 
+@mixin font28 {
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 400;
+}
+
 @mixin font30 {
     font-size: 30px;
     line-height: 40px;
     font-weight: 600;
+}
+
+@mixin font38 {
+    font-size: 38px;
+    line-height: 50px;
+    font-weight: 400;
+}
+
+@mixin commonHead {
+    font-size: 38px;
+    line-height: 50px;
+    font-weight: 400;
+    font-family: var(--font-family-space);
+}
+
+@mixin font50 {
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: 400;
+}
+
+@mixin font60 {
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
 }

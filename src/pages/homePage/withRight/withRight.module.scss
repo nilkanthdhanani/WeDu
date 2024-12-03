@@ -1,0 +1,47 @@
+@import "../../../assets/styles/main.scss";
+
+.withRight {
+    padding: 100px 0;
+    background-color: var(--bg-yellow);
+    position: relative;
+    margin-top: 100px;
+
+    .withRightBg {
+        position: absolute;
+        top: -98px;
+        left: 0;
+        width: 100%;
+
+        svg {
+            width: 100%;
+            fill: var(--bg-yellow);
+        }
+    }
+
+    .withRightContent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .wrContentHead {
+            display: flex;
+            align-items: center;
+
+            h2 {
+                @include commonHead;
+                color: var(--font-black);
+                max-width: 375px;
+            }
+        }
+
+        .wrContentPera {
+            display: flex;
+            align-items: center;
+
+            p {
+                @include commonPera;
+                color: var(--font-black);
+                max-width: 470px;
+            }
+        }
+    }
+}

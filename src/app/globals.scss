@@ -11,10 +11,6 @@ html {
     box-sizing: border-box;
 }
 
-img {
-    max-width: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -25,8 +21,18 @@ p {
     margin: 0;
 }
 
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
 a {
     text-decoration: none;
+}
+
+img {
+    max-width: 100%;
 }
 
 textarea {
@@ -40,5 +46,5 @@ textarea {
 }
 
 .no-scroll::-webkit-scrollbar {
-    background: #fff;
+    background: var(--color-white);
 }

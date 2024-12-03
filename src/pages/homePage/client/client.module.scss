@@ -1,0 +1,78 @@
+@import "../../../assets/styles/main.scss";
+
+.client {
+    margin: 100px 0;
+
+    .clientHead {
+        h2 {
+            @include commonHead;
+            margin-bottom: 60px;
+        }
+    }
+
+    .clientGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 80px;
+
+        .clientContent {
+            border: 2px solid var(--color-black);
+            border-radius: 12px;
+            position: relative;
+
+            .clientContentLine {
+                padding: 15px;
+                background-color: var(--bg-yellow);
+                border-bottom: 2px solid var(--color-black);
+                border-radius: 11px 11px 0 0;
+                display: flex;
+                align-items: center;
+                gap: 7px;
+
+                .clientContentLineDot {
+                    height: 8px;
+                    width: 8px;
+                    background-color: var(--color-black);
+                    border-radius: 50%;
+                }
+            }
+
+            .clientContentBox {
+                padding: 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                flex-direction: column;
+                gap: 80px;
+
+                .clientContentData {
+                    p {
+                        @include commonPera;
+                        color: var(--color-black);
+                    }
+                }
+
+                .clientContentName {
+                    h3 {
+                        @include font16Bold;
+                        margin-bottom: 5px;
+                        color: var(--color-black);
+                    }
+                }
+            }
+
+            .clientIcon {
+                position: absolute;
+                bottom: -35px;
+                left: -20px;
+            }
+
+            &:last-child {
+                .clientIcon {
+                    position: absolute;
+                    bottom: -10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+@import "../../../assets/styles/main.scss";
+
+.built {
+    padding: 100px 0;
+
+    .builtDiv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+
+        .builtDivImg {
+            position: relative;
+            padding: 100px 0;
+
+            .builtRoundBg {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .builtSqureBg {
+                position: absolute;
+                bottom: 80px;
+                right: 10px;
+            }
+
+            .builtCurveBg {
+                position: absolute;
+                bottom: 40px;
+                right: 30%;
+            }
+
+            .builtDivImgDiv {
+                position: relative;
+
+                svg {
+                    width: 480px;
+                }
+            }
+        }
+
+        .builtDivContent {
+            display: flex;
+            justify-content: flex-end;
+
+            .builtContentDiv {
+                max-width: 450px;
+
+                h2 {
+                    @include commonHead;
+                    color: var(--font-black);
+                    max-width: 350px;
+                }
+                
+                p {
+                    max-width: 400px;
+                    @include commonPera;
+                    color: var(--font-black);
+                    margin: 40px 0 60px 0;
+                }
+
+                .builtDivContentGrid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+
+                    .gridBox {
+                        display: flex;
+                        gap: 10px;
+
+                        img {
+                            width: 32px;
+                            height: 32px;
+                        }
+
+                        span {
+                            display: block;
+                            @include font14;
+                            font-family: var(--font-family-proxima);
+                            color: var(--font-black);
+                            letter-spacing: 0.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

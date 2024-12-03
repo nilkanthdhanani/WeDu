@@ -1,0 +1,56 @@
+@import "../../../assets/styles/main.scss";
+
+.weOffer {
+    margin: 100px 0;
+
+    .weOfferHead {
+        max-width: 490px;
+        margin-bottom: 60px;
+
+        h2 {
+            @include commonHead;
+            color: var(--font-black);
+            margin-bottom: 20px;
+        }
+
+        p {
+            @include commonPera;
+            color: var(--font-black);
+        }
+    }
+
+    .weOfferContent {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 60px;
+
+        .weOfferItem {
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 330px;
+                object-fit: cover;
+                border-radius: 8px;
+                border: 2px solid var(--color-black);
+            }
+
+            .weOfferItemText {
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h3 {
+                    @include font22Bold;
+                    font-family: var(--font-family-space);
+                    color: var(--font-black);
+                }
+
+                p {
+                    @include commonPera;
+                    color: var(--font-black);
+                }
+            }
+        }
+    }
+}

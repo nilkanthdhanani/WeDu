@@ -1,8 +1,9 @@
 @import "../../assets/styles/main.scss";
 
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 9;
     padding: 20px 0 0 0;
     transition: all 0.3s ease-in-out;

@@ -1,0 +1,54 @@
+@import "../../../assets/styles/main.scss";
+
+.leaders {
+    padding: 100px 0;
+    background-color: var(--bg-pink);
+    position: relative;
+    margin-top: 100px;
+
+    .leadersBg {
+        position: absolute;
+        top: -99px;
+        left: 0;
+        width: 100%;
+
+        svg {
+            width: 100%;
+        }
+    }
+
+    .leadersContent {
+        .leadersContentHead {
+            margin-bottom: 60px;
+
+            h2 {
+                @include commonHead;
+                color: var(--font-black);
+                margin-bottom: 20px;
+            }
+
+            p {
+                @include commonPera;
+                color: var(--font-black);
+                max-width: 450px;
+            }
+        }
+
+        .leadersContentGrid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            .leadersContentBox {
+                min-height: 170px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    max-width: 120px;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

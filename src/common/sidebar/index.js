@@ -35,9 +35,11 @@ export default function Sidebar({ isOpen, onClose }) {
             <ProfileIco /> <span>Log In</span>
           </Link>
         </nav>
-        <Link href={"/"} onClick={onClose}>
-          <button type="button">Get Started</button>
-        </Link>
+        <div className={styles.startedBtn}>
+          <Link href={"/"} onClick={onClose}>
+            <button type="button">Get Started</button>
+          </Link>
+        </div>
       </div>
     </aside>
   );
