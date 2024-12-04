@@ -15,7 +15,7 @@ export default function Pricing() {
                         <h2>Explore Our Pricing Options</h2>
                         <p>Discover flexible pricing plans tailored to meet your needs. Whether you're a startup, a growing business, or an enterprise, our transparent and competitive options ensure you get maximum value. Explore features designed to scale with you, offering the perfect balance of cost and capability. Choose a plan that aligns with your goals and empowers your journey to success.</p>
                         <Link href="/plans">
-                            <button type="button">See More</button>
+                            <button type="button">More Plans</button>
                         </Link>
                     </div>
                     <div className={styles.pricingCardDiv}>

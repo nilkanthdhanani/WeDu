@@ -11,7 +11,7 @@ export default function GetReady() {
         <div className={styles.getRedayHead}>
           <h2>Get Ready to Maximize Your Productivity With Our Workflow Solutions</h2>
           <Link href="/plans">
-          <button type="button">Get Started</button>
+            <button type="button">Get Started</button>
           </Link>
           <GetReadyBg />
         </div>
