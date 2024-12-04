@@ -12,18 +12,20 @@ export default function Built() {
     <section className={styles.built}>
       <div className={styles.container2}>
         <div className={styles.builtDiv}>
-          <div className={styles.builtDivImg}>
-            <div className={styles.builtRoundBg}>
-              <BuiltRoundBg />
-            </div>
-            <div className={styles.builtSqureBg}>
-              <BuiltSqureBg />
-            </div>
-            <div className={styles.builtCurveBg}>
-              <BuiltCurveBg />
-            </div>
-            <div className={styles.builtDivImgDiv}>
-              <BuiltBg />
+          <div className={styles.builtDiv1}>
+            <div className={styles.builtDivImg}>
+              <div className={styles.builtRoundBg}>
+                <BuiltRoundBg />
+              </div>
+              <div className={styles.builtSqureBg}>
+                <BuiltSqureBg />
+              </div>
+              <div className={styles.builtCurveBg}>
+                <BuiltCurveBg />
+              </div>
+              <div className={styles.builtDivImgDiv}>
+                <BuiltBg />
+              </div>
             </div>
           </div>
           <div className={styles.builtDivContent}>

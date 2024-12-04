@@ -7,7 +7,7 @@ const clients = [
     {
         id: 1,
         name: 'Deena Levies',
-        comment: 'Working with this team has been a game-changer for our business. Their tools are intuitive, reliable, and have significantly boosted our productivity. We couldn’t be more satisfied!"',
+        comment: 'Working with this team has been a game-changer for our business. Their tools are intuitive, reliable, and have significantly boosted our productivity. We couldn’t be more satisfied!',
         company: 'Mission Bay',
         icon: <ClientIcon1 />,
     },

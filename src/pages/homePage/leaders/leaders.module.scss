@@ -6,6 +6,10 @@
     position: relative;
     margin-top: 100px;
 
+    @include breakpoint("sm-max") {
+        padding: 60px 0;
+    }
+
     .leadersBg {
         position: absolute;
         top: -99px;
@@ -37,6 +41,11 @@
         .leadersContentGrid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+
+            @include breakpoint("sm-max") {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
 
             .leadersContentBox {
                 min-height: 170px;

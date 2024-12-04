@@ -32,7 +32,7 @@ export default function Pricing() {
                                     </li>
                                     <li>
                                         <CheckIcon />
-                                        <p>No hidden costs—know exactly what you’re paying for with upfront pricing.</p>
+                                        <p>No hidden costs—know exactly what you're paying for with upfront pricing.</p>
                                     </li>
                                     <li>
                                         <CheckIcon />

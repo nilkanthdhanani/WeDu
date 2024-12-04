@@ -3,38 +3,96 @@
 .built {
     padding: 100px 0;
 
+    @include breakpoint("sm-max") {
+        padding: 0 0 60px 0;
+    }
+
     .builtDiv {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
 
-        .builtDivImg {
-            position: relative;
-            padding: 100px 0;
+        @include breakpoint("lg-max") {
+            grid-template-columns: 1fr;
+        }
 
-            .builtRoundBg {
-                position: absolute;
-                top: 0;
-                left: 0;
+        .builtDiv1 {
+            @include breakpoint("lg-max") {
+                display: flex;
+                justify-content: flex-end;
             }
 
-            .builtSqureBg {
-                position: absolute;
-                bottom: 80px;
-                right: 10px;
+            @include breakpoint("sm-max") {
+                display: unset;
             }
 
-            .builtCurveBg {
-                position: absolute;
-                bottom: 40px;
-                right: 30%;
-            }
-
-            .builtDivImgDiv {
+            .builtDivImg {
                 position: relative;
+                padding: 100px 0;
 
-                svg {
-                    width: 480px;
+                @include breakpoint("lg-max") {
+                    max-width: 490px;
+                    padding: 50px 0;
+                }
+
+                .builtRoundBg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    svg {
+                        @include breakpoint("sm-max") {
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+                }
+
+                .builtSqureBg {
+                    position: absolute;
+                    bottom: 80px;
+                    right: 10px;
+
+                    @include breakpoint("sm-max") {
+                        bottom: 40px;
+                        right: 0;
+                    }
+
+                    svg {
+                        @include breakpoint("sm-max") {
+                            width: 130px;
+                            height: 80px;
+                        }
+                    }
+                }
+
+                .builtCurveBg {
+                    position: absolute;
+                    bottom: 40px;
+                    right: 30%;
+
+                    @include breakpoint("sm-max") {
+                        bottom: 20px;
+                    }
+
+                    svg {
+                        @include breakpoint("sm-max") {
+                            width: 100px;
+                            height: 80px;
+                        }
+                    }
+                }
+
+                .builtDivImgDiv {
+                    position: relative;
+
+                    svg {
+                        width: 480px;
+
+                        @include breakpoint("sm-max") {
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }
@@ -42,6 +100,10 @@
         .builtDivContent {
             display: flex;
             justify-content: flex-end;
+
+            @include breakpoint("lg-max") {
+                justify-content: flex-start;
+            }
 
             .builtContentDiv {
                 max-width: 450px;
@@ -51,18 +113,26 @@
                     color: var(--font-black);
                     max-width: 350px;
                 }
-                
+
                 p {
                     max-width: 400px;
                     @include commonPera;
                     color: var(--font-black);
                     margin: 40px 0 60px 0;
+
+                    @include breakpoint("sm-max") {
+                        margin: 20px 0 30px 0;
+                    }
                 }
 
                 .builtDivContentGrid {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                     gap: 20px;
+
+                    @include breakpoint("sm-max") {
+                        grid-template-columns: 1fr;
+                    }
 
                     .gridBox {
                         display: flex;

@@ -4,6 +4,10 @@
     padding: 100px 0 0 0;
     position: relative;
 
+    @include breakpoint("sm-max") {
+        padding: 60px 0 0 0;
+    }
+
     .getReadyBg {
         position: absolute;
         bottom: 0;

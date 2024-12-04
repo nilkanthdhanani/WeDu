@@ -5,6 +5,10 @@
     background-color: var(--bg-gray);
     position: relative;
 
+    @include breakpoint("sm-max") {
+        padding: 60px 0 160px 0;
+    }
+
     .pricingBg {
         position: absolute;
         bottom: -5px;
@@ -22,6 +26,10 @@
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
         gap: 30px;
+
+        @include breakpoint("lg-max") {
+            grid-template-columns: repeat(1, 1fr);
+        }
 
         .pricingContent {
             h2 {
@@ -93,8 +101,16 @@
                     padding: 40px;
                     background-color: var(--bg-pink);
 
+                    @include breakpoint("sm-max") {
+                        padding: 40px 30px;
+                    }
+
                     ul {
                         padding-left: 20px;
+
+                        @include breakpoint("sm-max") {
+                            padding-left: 0;
+                        }
 
                         li {
                             display: grid;

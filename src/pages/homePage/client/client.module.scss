@@ -3,10 +3,19 @@
 .client {
     margin: 100px 0;
 
+    @include breakpoint("sm-max") {
+        margin: 60px 0;
+    }
+
     .clientHead {
         h2 {
             @include commonHead;
             margin-bottom: 60px;
+
+            @include breakpoint("sm-max") {
+                margin-bottom: 30px;
+                text-align: center;
+            }
         }
     }
 
@@ -15,10 +24,26 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 80px;
 
+        @include breakpoint("lg-max") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint("md-max") {
+            grid-template-columns: repeat(1, 310px);
+            justify-content: center;
+        }
+        
+        @include breakpoint("sm-max") {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 40px;
+        }
+
         .clientContent {
             border: 2px solid var(--color-black);
             border-radius: 12px;
             position: relative;
+            display: grid;
+            grid-template-rows: 40px 1fr;
 
             .clientContentLine {
                 padding: 15px;
