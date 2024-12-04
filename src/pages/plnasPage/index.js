@@ -76,7 +76,7 @@ export default function PlansPage() {
                                 <div className={styles.bestValue}>Best Value</div>
                                 <div className={styles.planCardData}>
                                     <span>{data.title}</span>
-                                    <h3>${data.price}</h3>
+                                    <h2>${data.price}</h2>
                                     <p>/{data.duration}</p>
                                     <Link href="/plans">
                                         <button type="button">Get Started</button>
