@@ -8,7 +8,7 @@ import offer4 from '../../../assets/images/webp/offer4.webp';
 
 export default function WeOffer() {
     return (
-        <section className={styles.weOffer}>
+        <section className={styles.weOffer} id='product'>
             <div className={styles.container2}>
                 <div className={styles.weOfferHead}>
                     <h2>What We Offer</h2>

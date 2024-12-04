@@ -74,11 +74,11 @@ export default function Header() {
                 <Link href={"/"} className={pathname === '/' ? styles.active : ''}>
                   <span>Home</span>
                 </Link>
-                <Link href={"/product"} className={pathname === '/product' ? styles.active : ''}>
+                <Link href={"/#product"} className={pathname === '/#product' ? styles.active : ''}>
                   <span>Product</span>
                 </Link>
                 <Link href={"/plans"} className={pathname === '/plans' ? styles.active : ''}>
-                  <span>Product Plans</span>
+                  <span>Pricing Plans</span>
                 </Link>
                 <Link href={"/contact"} className={pathname === '/contact' ? styles.active : ''}>
                   <span>Contact</span>
@@ -87,7 +87,7 @@ export default function Header() {
                   <ProfileIco /> <span>Log In</span>
                 </Link>
               </nav>
-              <Link href={"/"}>
+              <Link href={"/plans"}>
                 <button type="button">Get Started</button>
               </Link>
             </div>

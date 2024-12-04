@@ -2,6 +2,7 @@ import HeroBannerIco from '@/assets/images/svg/heroBanner'
 import styles from './heroBanner.module.scss'
 import { detailIcon1, detailIcon2, detailIcon3 } from '@/assets/images/image'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function HeroBanner() {
   return (
@@ -11,7 +12,9 @@ export default function HeroBanner() {
           <div className={styles.bannerDivContent}>
             <h1>Communicate. Collaborate. Create.</h1>
             <p>WeDu provides an effective and powerful way to manage your projects</p>
-            <button>Get Started</button>
+            <Link href="/plans">
+              <button>Get Started</button>
+            </Link>
             <div className={styles.bannerDivContentGrid}>
               <div className={styles.gridBox}>
                 <Image src={detailIcon1} alt="detailIcon1" />

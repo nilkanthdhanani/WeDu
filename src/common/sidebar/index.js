@@ -22,11 +22,11 @@ export default function Sidebar({ isOpen, onClose }) {
           <Link href={"/"} className={pathname === '/' ? styles.active : ''} onClick={onClose}>
             <span>Home</span>
           </Link>
-          <Link href={"/product"} className={pathname === '/product' ? styles.active : ''} onClick={onClose}>
+          <Link href={"/#product"} className={pathname === '/#product' ? styles.active : ''} onClick={onClose}>
             <span>Product</span>
           </Link>
           <Link href={"/plans"} className={pathname === '/plans' ? styles.active : ''} onClick={onClose}>
-            <span>Product Plans</span>
+            <span>Pricing Plans</span>
           </Link>
           <Link href={"/contact"} className={pathname === '/contact' ? styles.active : ''} onClick={onClose}>
             <span>Contact</span>
@@ -36,7 +36,7 @@ export default function Sidebar({ isOpen, onClose }) {
           </Link>
         </nav>
         <div className={styles.startedBtn}>
-          <Link href={"/"} onClick={onClose}>
+          <Link href={"/plans"} onClick={onClose}>
             <button type="button">Get Started</button>
           </Link>
         </div>

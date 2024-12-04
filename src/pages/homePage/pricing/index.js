@@ -1,6 +1,7 @@
 import WithRightBg from '@/assets/images/svg/withRightBg';
 import styles from './pricing.module.scss';
 import CheckIcon from '@/assets/images/svg/checkIcon';
+import Link from 'next/link';
 
 export default function Pricing() {
     return (
@@ -13,7 +14,9 @@ export default function Pricing() {
                     <div className={styles.pricingContent}>
                         <h2>Explore Our Pricing Options</h2>
                         <p>Discover flexible pricing plans tailored to meet your needs. Whether you're a startup, a growing business, or an enterprise, our transparent and competitive options ensure you get maximum value. Explore features designed to scale with you, offering the perfect balance of cost and capability. Choose a plan that aligns with your goals and empowers your journey to success.</p>
-                        <button type="button">See More</button>
+                        <Link href="/plans">
+                            <button type="button">See More</button>
+                        </Link>
                     </div>
                     <div className={styles.pricingCardDiv}>
                         <div className={styles.pricingCard}>
@@ -22,7 +25,9 @@ export default function Pricing() {
                                 <span>Premium</span>
                                 <h3>$ 599</h3>
                                 <p>/year</p>
-                                <button type="button">Get Started</button>
+                                <Link href="/plans">
+                                    <button type="button">Get Started</button>
+                                </Link>
                             </div>
                             <div className={styles.pricingCardList}>
                                 <ul>
