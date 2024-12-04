@@ -23,7 +23,7 @@ export default function Pricing() {
                             <div className={styles.bestValue}>Best Value</div>
                             <div className={styles.pricingCardData}>
                                 <span>Premium</span>
-                                <h3>$ 599</h3>
+                                <h3>$599</h3>
                                 <p>/year</p>
                                 <Link href="/plans">
                                     <button type="button">Get Started</button>

@@ -2,25 +2,7 @@
 @import "typography";
 @import "variables";
 
-.headerList {
-    button {
-        padding: 8px 15px;
-        @include font16;
-        font-weight: 600;
-        font-family: var(--font-family-space);
-        border-radius: 7px;
-        border: 1px solid var(--border-color);
-        background-color: var(--bg-yellow);
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-            background-color: var(--color-black);
-            color: var(--font-yellow);
-        }
-    }
-}
-
+.headerList,
 .subscribeBtn,
 .bannerDivContent,
 .pricingContent,
@@ -66,6 +48,37 @@
 
         &:hover {
             background-color: var(--bg-yellow);
+        }
+    }
+}
+
+.planCard {
+    button {
+        padding: 14px 50px;
+        @include font16;
+        font-weight: 600;
+        font-family: var(--font-family-space);
+        border-radius: 7px;
+        border: 2px solid var(--color-black);
+        background-color: var(--color-black);
+        color: var(--font-white);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: var(--bg-yellow);
+            color: var(--font-black);
+        }
+    }
+
+    &.third {
+        button {
+            background-color: var(--color-white);
+            color: var(--font-black);
+
+            &:hover {
+                background-color: var(--bg-yellow);
+            }
         }
     }
 }
