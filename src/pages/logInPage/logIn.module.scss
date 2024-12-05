@@ -1,0 +1,211 @@
+@import "../../assets/styles/main.scss";
+
+.logIn {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include breakpoint("lg-max") {
+        grid-template-columns: 1fr;
+    }
+
+    .logInBg {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint("lg-max") {
+            height: auto;
+            position: relative;
+        }
+
+        img {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .logInContent {
+        background-color: var(--color-white);
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 30px 20px;
+
+        .logInDiv {
+            width: 100%;
+            max-width: 400px;
+
+            .logInDivLogo {
+                display: flex;
+                justify-content: center;
+
+                .logo {
+                    display: grid;
+                    grid-template-columns: 42px 1fr;
+                    align-items: center;
+                    gap: 10px;
+
+                    svg {
+                        width: 42px;
+                    }
+
+                    .logoText {
+                        span {
+                            @include font22Bold;
+                            font-family: var(--font-family-space);
+                            color: var(--font-black);
+                            user-select: none;
+                        }
+                    }
+                }
+            }
+
+            form {
+                margin: 35px 0;
+
+                .inputBox,
+                .inputBox2 {
+                    margin-bottom: 25px;
+
+                    input {
+                        padding: 14px;
+                        width: 100%;
+                        @include font20;
+                        font-family: var(--font-family-proxima);
+                        border: 2px solid var(--color-black);
+                        border-radius: 7px;
+                    }
+                }
+
+                .inputBox2 {
+                    input {
+                        padding: 14px 50px 14px 14px;
+                    }
+                }
+
+                .rememberDiv {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    gap: 20px;
+
+                    .checkboxDiv {
+                        display: flex;
+                        align-items: center;
+                        gap: 7px;
+
+                        label {
+                            margin-bottom: 0;
+                            cursor: pointer;
+                        }
+
+                        .checkbox {
+                            input {
+                                position: absolute;
+                                margin: 0;
+                                width: 18px;
+                                height: 18px;
+                                cursor: pointer;
+                                opacity: 0;
+
+                                &:checked + span svg path {
+                                    stroke-dashoffset: 0;
+                                }
+                            }
+
+                            input + span {
+                                display: block;
+                                border: 2px solid var(--color-black);
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                transition: all 0.2s ease;
+
+                                &:active {
+                                    transform: scale(1.05);
+                                }
+
+                                svg {
+                                    pointer-events: none;
+                                    padding: 10%;
+
+                                    path {
+                                        fill: none;
+                                        stroke: var(--color-black);
+                                        stroke-width: 6px;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                        stroke-dasharray: 100;
+                                        stroke-dashoffset: 101;
+                                        transition: all 250ms cubic-bezier(1, 0, 0.37, 0.91);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    a {
+                        @include font16;
+                        font-family: var(--font-family-proxima);
+                        color: var(--font-black);
+                        text-decoration-line: underline;
+                    }
+                }
+
+                .submitBtn {
+                    margin-top: 30px;
+                }
+            }
+
+            .orLine {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 1px;
+                    width: 100%;
+                    background-color: var(--font-shadow);
+                }
+
+                span {
+                    position: relative;
+                    z-index: 1;
+                    display: block;
+                    @include font16;
+                    font-family: var(--font-family-proxima);
+                    color: var(--font-shadow);
+                    background-color: var(--color-white);
+                    padding: 10px;
+                }
+            }
+
+            .googleLogin {
+                margin-top: 20px;
+                padding: 15px;
+                border: 1px solid var(--color-black);
+                border-radius: 99px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                @include font16Bold;
+                color: var(--font-black);
+                font-family: var(--font-family-space);
+            }
+        }
+    }
+}
