@@ -16,6 +16,7 @@ export default function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
     };
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => {

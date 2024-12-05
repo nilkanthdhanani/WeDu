@@ -1,0 +1,86 @@
+@import "../../../assets/styles/main.scss";
+
+.faq {
+    padding: 100px 0;
+
+    @include breakpoint("sm-max") {
+        padding: 60px 0;
+    }
+
+    .faqHead {
+        margin-bottom: 50px;
+
+        h2 {
+            @include commonHead;
+            color: var(--font-black);
+            text-align: center;
+        }
+    }
+
+    .faqDivMain {
+        max-width: 700px;
+        margin: 0 auto;
+
+        .faqDiv {
+            margin-bottom: 30px;
+            
+            .faqDivHead {
+                padding: 20px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                border-radius: 8px;
+                display: grid;
+                grid-template-columns: 1fr 20px;
+                align-items: center;
+                gap: 20px;
+                cursor: pointer;
+
+                h3 {
+                    @include font22Bold;
+                    font-family: var(--font-family-space);
+                    color: var(--font-black);
+
+                    @include breakpoint("sm-max") {
+                        font-size: 18px;
+                        line-height: 22px;
+                    }
+                }
+
+                .faqDivIcon {
+                    transform: rotate(180deg);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            .faqDivContent {
+                max-height: 0px;
+                overflow: hidden;
+                transition: all 0.3s ease-in-out;
+
+                p {
+                    padding: 20px;
+                    @include commonPera;
+                    color: var(--font-black);
+
+                    @include breakpoint("sm-max") {
+                        padding: 20px 20px 0 20px;
+                    }
+                }
+            }
+
+            &.active {
+                .faqDivHead {
+                    .faqDivIcon {
+                        transform: rotate(0deg);
+                    }
+                }
+
+                .faqDivContent {
+                    max-height: 100vh;
+                }
+            }
+        }
+    }
+}
