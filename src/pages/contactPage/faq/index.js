@@ -46,7 +46,6 @@ const QandA = [
     },
 ];
 
-
 export default function Faq() {
     const [activeFaq, setActiveFaq] = useState(null);
 

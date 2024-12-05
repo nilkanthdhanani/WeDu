@@ -13,7 +13,13 @@ import leader5 from "./webp/leader5.webp";
 import leader6 from "./webp/leader6.webp";
 import leader7 from "./webp/leader7.webp";
 import leader8 from "./webp/leader8.webp";
+import image1 from "./webp/images1.jpg";
+import image2 from "./webp/images2.jpg";
+import image3 from "./webp/images3.jpg";
+import image4 from "./webp/images4.jpeg";
+import image5 from "./webp/images5.avif";
+import image6 from "./webp/images6.jpg";
 
 export {
-    detailIcon1, detailIcon2, detailIcon3, detailIcon4, detailIcon5, detailIcon6, leader1, leader2, leader3, leader4, leader5, leader6, leader7, leader8
+    detailIcon1, detailIcon2, detailIcon3, detailIcon4, detailIcon5, detailIcon6, leader1, leader2, leader3, leader4, leader5, leader6, leader7, leader8, image1, image2, image3, image4, image5, image6
 }
