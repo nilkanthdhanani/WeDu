@@ -1,3 +1,4 @@
+"use client"
 import { loginBg } from '@/assets/images/image'
 import styles from './logIn.module.scss'
 import Image from 'next/image'
@@ -5,15 +6,26 @@ import Link from 'next/link'
 import LogoIco from '@/assets/images/svg/logo'
 import GoogleIco from '@/assets/images/svg/googleIcon'
 import AppleIco from '@/assets/images/svg/appleIcon'
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 
 export default function LogInPage() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false,
+    });
+    Aos.refresh();
+  }, []);
+
   return (
     <main>
       <section className={styles.logIn}>
-        <div className={styles.logInBg}>
+        <div className={styles.logInBg} data-aos="zoom-in">
           <Image src={loginBg} alt="loginBg" />
         </div>
-        <div className={styles.logInContent}>
+        <div className={styles.logInContent} data-aos="zoom-in">
           <div className={styles.logInDiv}>
             <div className={styles.logInDivLogo}>
               <Link href={"/"}>

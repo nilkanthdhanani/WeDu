@@ -1,9 +1,13 @@
+"use client"
 import LeaderBg from '@/assets/images/svg/leaderBg';
 import styles from './plan.module.scss';
 import PlanIcon1 from '@/assets/images/svg/planIcon1';
 import PlanIcon2 from '@/assets/images/svg/planIcon2';
 import Link from 'next/link';
 import CheckIcon from '@/assets/images/svg/checkIcon';
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const plansCard = [
     {
@@ -57,11 +61,19 @@ const plansCard = [
 ]
 
 export default function PlansPage() {
+    useEffect(() => {
+      Aos.init({
+        duration: 2000,
+        once: false,
+      });
+      Aos.refresh();
+    }, []);
+
     return (
         <main>
             <section className={styles.plansHead}>
                 <div className={styles.container2}>
-                    <div className={styles.plansHeadContent}>
+                    <div className={styles.plansHeadContent} data-aos="zoom-in">
                         <h1>Explore Our Pricing Plans</h1>
                         <p>Discover flexible pricing plans designed to meet your tech needs, offering scalable solutions tailored for businesses of all sizes.</p>
                     </div>
@@ -70,7 +82,7 @@ export default function PlansPage() {
             <section className={styles.plans}>
                 <div className={styles.plansBg}><LeaderBg /></div>
                 <div className={styles.container2}>
-                    <div className={styles.plansContent}>
+                    <div className={styles.plansContent} data-aos="fade-up">
                         {plansCard.map((data, index) => (
                             <div className={`${styles.planCard} ${index === 2 ? styles.third : ''}`} key={index}>
                                 <div className={styles.bestValue}>Best Value</div>

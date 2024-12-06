@@ -1,3 +1,4 @@
+"use client"
 import LeaderBg from '@/assets/images/svg/leaderBg';
 import styles from './contact.module.scss';
 import ChatEmojiIcon from '@/assets/images/svg/chatEmojiIcon';
@@ -6,6 +7,9 @@ import MapIcon from '@/assets/images/svg/mapIcon';
 import PhoneIcon from '@/assets/images/svg/phoneIcon';
 import Link from 'next/link';
 import Faq from './faq';
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const contactBox = [
     {
@@ -39,11 +43,19 @@ const contactBox = [
 ]
 
 export default function ContactPage() {
+    useEffect(() => {
+      Aos.init({
+        duration: 1000,
+        once: false,
+      });
+      Aos.refresh();
+    }, []);
+
     return (
         <main>
             <section className={styles.contactHead}>
                 <div className={styles.container2}>
-                    <div className={styles.contactHeadContent}>
+                    <div className={styles.contactHeadContent} data-aos="zoom-in">
                         <h1>Contact Our Friendly Team</h1>
                         <p>Let us know how we can help.</p>
                     </div>
@@ -54,7 +66,7 @@ export default function ContactPage() {
                 <div className={styles.container2}>
                     <div className={styles.contactContent}>
                         {contactBox.map((data, index) => (
-                            <div className={styles.contactContentBox} key={index}>
+                            <div className={styles.contactContentBox} key={index} data-aos="fade-up">
                                 <div className={styles.contactContentLine}>
                                     <div className={styles.contactLineDot}></div>
                                     <div className={styles.contactLineDot}></div>

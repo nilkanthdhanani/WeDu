@@ -1,7 +1,9 @@
 "use client"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TopArrow from '@/assets/images/svg/topArrow';
 import styles from './faq.module.scss';
+import Aos from 'aos'
+import 'aos/dist/aos.css';
 
 const QandA = [
     {
@@ -47,6 +49,14 @@ const QandA = [
 ];
 
 export default function Faq() {
+    useEffect(() => {
+        Aos.init({
+            duration: 1000,
+            once: false,
+        });
+        Aos.refresh();
+    }, []);
+
     const [activeFaq, setActiveFaq] = useState(null);
 
     const toggleFaq = (index) => {
@@ -56,13 +66,13 @@ export default function Faq() {
     return (
         <section className={styles.faq}>
             <div className={styles.container2}>
-                <div className={styles.faqHead}>
+                <div className={styles.faqHead} data-aos="zoom-in">
                     <h2>Frequently Asked Questions</h2>
                 </div>
                 <div className={styles.faqDivMain}>
                     {QandA.map((data, index) => (
                         <div className={`${styles.faqDiv} ${activeFaq === index ? styles.active : ''}`} key={index}>
-                            <div className={styles.faqDivHead} onClick={() => toggleFaq(index)}>
+                            <div className={styles.faqDivHead} onClick={() => toggleFaq(index)} data-aos="fade-up">
                                 <h3>{data.question}</h3>
                                 <div className={styles.faqDivIcon}>
                                     <TopArrow />

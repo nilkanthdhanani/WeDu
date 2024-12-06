@@ -17,6 +17,8 @@
         }
 
         .builtDiv1 {
+            overflow: hidden;
+            
             @include breakpoint("lg-max") {
                 display: flex;
                 justify-content: flex-end;

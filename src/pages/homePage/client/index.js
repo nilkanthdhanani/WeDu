@@ -2,6 +2,9 @@ import styles from './client.module.scss'
 import ClientIcon1 from '@/assets/images/svg/clientIcon1'
 import ClientIcon2 from '@/assets/images/svg/clientIcon2'
 import ClientIcon3 from '@/assets/images/svg/clientIcon3'
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 
 const clients = [
     {
@@ -28,15 +31,23 @@ const clients = [
 ]
 
 export default function Clients() {
+    useEffect(() => {
+        Aos.init({
+            duration: 2000,
+            once: false,
+        });
+        Aos.refresh();
+    }, []);
+
     return (
         <section className={styles.client}>
             <div className={styles.container2}>
-                <div className={styles.clientHead}>
+                <div className={styles.clientHead} data-aos="zoom-in">
                     <h2>What Our Clients Say</h2>
                 </div>
                 <div className={styles.clientGrid}>
                     {clients.map((detail, index) => (
-                        <div className={styles.clientContent} key={index}>
+                        <div className={styles.clientContent} key={index} data-aos="fade-up">
                             <div className={styles.clientContentLine}>
                                 <div className={styles.clientContentLineDot}></div>
                                 <div className={styles.clientContentLineDot}></div>

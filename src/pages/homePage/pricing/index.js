@@ -2,8 +2,19 @@ import WithRightBg from '@/assets/images/svg/withRightBg';
 import styles from './pricing.module.scss';
 import CheckIcon from '@/assets/images/svg/checkIcon';
 import Link from 'next/link';
+import Aos from 'aos'
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 export default function Pricing() {
+    useEffect(() => {
+      Aos.init({
+        duration: 2000,
+        once: false,
+      });
+      Aos.refresh();
+    }, []);
+
     return (
         <section className={styles.pricing}>
             <div className={styles.pricingBg}>
@@ -11,7 +22,7 @@ export default function Pricing() {
             </div>
             <div className={styles.container2}>
                 <div className={styles.pricingGrid}>
-                    <div className={styles.pricingContent}>
+                    <div className={styles.pricingContent} data-aos="zoom-in">
                         <h2>Explore Our Pricing Options</h2>
                         <p>Discover flexible pricing plans tailored to meet your needs. Whether you're a startup, a growing business, or an enterprise, our transparent and competitive options ensure you get maximum value. Explore features designed to scale with you, offering the perfect balance of cost and capability. Choose a plan that aligns with your goals and empowers your journey to success.</p>
                         <Link href="/plans">
@@ -19,7 +30,7 @@ export default function Pricing() {
                         </Link>
                     </div>
                     <div className={styles.pricingCardDiv}>
-                        <div className={styles.pricingCard}>
+                        <div className={styles.pricingCard} data-aos="fade-up">
                             <div className={styles.bestValue}>Best Value</div>
                             <div className={styles.pricingCardData}>
                                 <span>Premium</span>
